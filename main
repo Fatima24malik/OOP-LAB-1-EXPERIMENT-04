@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+class Person {
+protected:
+    string name;
+
+public:
+    Person(string n) {
+        name = n;
+    }
+};
+
+class Doctor : public Person {
+public:
+    Doctor(string n) : Person(n) {}
+
+    void showDoctor() {
+        cout << "Doctor Name: " << name << endl;
+    }
+};
+
+class Patient : public Person {
+public:
+    Patient(string n) : Person(n) {}
+
+    void showPatient() {
+        cout << "Patient Name: " << name << endl;
+    }
+};
+
+int main() {
+
+    Doctor d("Dr. Ahmed");
+    Patient p("Ali");
+
+    d.showDoctor();
+    p.showPatient();
+
+    return 0;
+}
